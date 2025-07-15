@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import GetAppIcon from "@mui/icons-material/GetApp";
+import SecurityIcon from "@mui/icons-material/Security";
+import CheckIcon from "@mui/icons-material/Check";
 
 export default function LandingPage() {
   return (
@@ -43,21 +47,12 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Feature Card 1 */}
             <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="card-body items-center text-center m-6">
-                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mb-4">
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
+              <div className="card-body text-center px-6 py-8">
+                {/* Wrapper div to center icon */}
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                    <CheckCircleIcon sx={{ fontSize: 32, color: "white" }} />
+                  </div>
                 </div>
                 <h3 className="card-title text-xl font-semibold text-gray-900 mb-2">
                   ATS-Optimized Design
@@ -72,21 +67,11 @@ export default function LandingPage() {
 
             {/* Feature Card 2 */}
             <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="card-body items-center text-center m-6">
-                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mb-4">
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
+              <div className="card-body text-center px-6 py-8">
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                    <GetAppIcon sx={{ fontSize: 32, color: "white" }} />
+                  </div>
                 </div>
                 <h3 className="card-title text-xl font-semibold text-gray-900 mb-2">
                   One-Click PDF Export
@@ -100,27 +85,18 @@ export default function LandingPage() {
 
             {/* Feature Card 3 */}
             <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="card-body items-center text-center m-6">
-                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mb-4">
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                    />
-                  </svg>
+              <div className="card-body text-center px-6 py-8">
+                {/* Centered Icon */}
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                    <SecurityIcon sx={{ fontSize: 32, color: "white" }} />
+                  </div>
                 </div>
                 <h3 className="card-title text-xl font-semibold text-gray-900 mb-2">
                   Privacy & Performance
                 </h3>
                 <p className="text-gray-600">
-                  Built with privacy in mind - your data never leaves your
+                  Built with privacy in mind – your data never leaves your
                   browser. Lightning-fast performance for a seamless editing
                   experience.
                 </p>
@@ -141,19 +117,7 @@ export default function LandingPage() {
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg
-                      className="w-4 h-4 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
+                    <CheckIcon sx={{ fontSize: 16, color: "white" }} />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">
@@ -167,19 +131,7 @@ export default function LandingPage() {
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg
-                      className="w-4 h-4 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
+                    <CheckIcon sx={{ fontSize: 16, color: "white" }} />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">
@@ -193,19 +145,7 @@ export default function LandingPage() {
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg
-                      className="w-4 h-4 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
+                    <CheckIcon sx={{ fontSize: 16, color: "white" }} />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">

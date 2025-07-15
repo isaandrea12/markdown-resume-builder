@@ -4,6 +4,7 @@ import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import DescriptionIcon from "@mui/icons-material/Description";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import { resumeTemplates } from "@/data/templates";
 
 type EditorToolbarProps = {
   onInsert: (text: string) => void;
@@ -14,86 +15,6 @@ export default function EditorToolbar({
   onInsert,
   onLoadTemplate,
 }: EditorToolbarProps) {
-  const templates = {
-    professional: `# John Doe
-Senior Software Engineer  
-San Francisco, CA · john.doe@email.com · (555) 123-4567 · linkedin.com/in/johndoe
-
-## Summary
-Experienced software engineer with 8+ years developing scalable web applications. Proven track record of leading cross-functional teams and delivering high-impact products used by millions of users.
-
-## Experience
-**Senior Software Engineer** | Google  
-*2020 – Present*  
-- Led development of core search features serving 1B+ daily users
-- Mentored 5 junior engineers and improved team productivity by 40%
-- Architected microservices reducing system latency by 60%
-
-**Software Engineer** | Airbnb  
-*2018 – 2020*  
-- Built booking platform features processing $10M+ in transactions
-- Implemented A/B testing framework used across 20+ product teams
-- Reduced page load times by 45% through performance optimizations
-
-## Education
-**M.S. Computer Science** | Stanford University, 2018  
-**B.S. Computer Science** | UC Berkeley, 2016
-
-## Skills
-**Programming:** Python, JavaScript, Go, Java  
-**Technologies:** React, Node.js, PostgreSQL, AWS, Docker  
-**Leadership:** Team Management, Technical Mentoring, Agile Development`,
-
-    marketing: `# Sarah Johnson
-Digital Marketing Manager  
-Austin, TX · sarah.johnson@email.com · (555) 987-6543
-
-## Professional Summary
-Results-driven marketing professional with 6+ years of experience in digital marketing, brand management, and growth strategy. Proven ability to increase brand awareness and drive revenue growth through data-driven campaigns.
-
-## Experience
-**Digital Marketing Manager** | HubSpot  
-*2021 – Present*  
-- Increased organic traffic by 150% through SEO optimization and content strategy
-- Managed $2M annual advertising budget across multiple channels
-- Led rebranding initiative that improved brand recognition by 35%
-
-**Marketing Specialist** | Salesforce  
-*2019 – 2021*  
-- Executed email marketing campaigns with 25% average open rate
-- Created social media strategy resulting in 200% follower growth
-- Collaborated with sales team to generate 500+ qualified leads monthly
-
-## Education
-**MBA, Marketing** | University of Texas at Austin, 2019  
-**B.A. Communications** | Texas A&M University, 2017
-
-## Core Competencies
-• Digital Marketing Strategy • Content Creation • SEO/SEM  
-• Social Media Marketing • Email Marketing • Analytics & Reporting  
-• Brand Management • Campaign Optimization • Lead Generation`,
-
-    minimal: `# Alex Chen
-Product Designer  
-Seattle, WA · alex.chen@email.com
-
-## Experience
-**Senior Product Designer** | Microsoft  
-*2020 – Present*  
-- Design user experiences for Microsoft Teams (50M+ daily users)
-- Lead design system initiatives across multiple product teams
-
-**Product Designer** | Spotify  
-*2018 – 2020*  
-- Created mobile app features improving user engagement by 30%
-- Conducted user research and usability testing for new features
-
-## Education
-**B.A. Design** | Art Center College of Design, 2018
-
-## Skills
-Figma, Sketch, Prototyping, User Research, Design Systems`,
-  };
 
   const formatButtons = [
     { label: "Bold", syntax: "**text**", icon: "B" },
@@ -200,50 +121,25 @@ Figma, Sketch, Prototyping, User Research, Design Systems`,
               />
               <div className="absolute top-full left-0 mt-1 z-20 bg-white rounded-lg border border-gray-200 shadow-lg w-60">
                 <div className="p-2">
-                  <button
-                    onClick={() => {
-                      onLoadTemplate(templates.professional);
-                      setIsTemplatesOpen(false);
-                    }}
-                    className="text-left w-full hover:bg-gray-50 px-3 py-2 rounded-md transition-colors block"
-                  >
-                    <div>
-                      <div className="font-medium text-gray-900">
-                        Professional
+                  {resumeTemplates.map((template) => (
+                    <button
+                      key={template.id}
+                      onClick={() => {
+                        onLoadTemplate(template.content);
+                        setIsTemplatesOpen(false);
+                      }}
+                      className="text-left w-full hover:bg-gray-50 px-3 py-2 rounded-md transition-colors block"
+                    >
+                      <div>
+                        <div className="font-medium text-gray-900">
+                          {template.name}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          {template.description}
+                        </div>
                       </div>
-                      <div className="text-xs text-gray-500">
-                        Tech/Corporate roles
-                      </div>
-                    </div>
-                  </button>
-                  <button
-                    onClick={() => {
-                      onLoadTemplate(templates.marketing);
-                      setIsTemplatesOpen(false);
-                    }}
-                    className="text-left w-full hover:bg-gray-50 px-3 py-2 rounded-md transition-colors block"
-                  >
-                    <div>
-                      <div className="font-medium text-gray-900">Marketing</div>
-                      <div className="text-xs text-gray-500">
-                        Marketing/Sales roles
-                      </div>
-                    </div>
-                  </button>
-                  <button
-                    onClick={() => {
-                      onLoadTemplate(templates.minimal);
-                      setIsTemplatesOpen(false);
-                    }}
-                    className="text-left w-full hover:bg-gray-50 px-3 py-2 rounded-md transition-colors block"
-                  >
-                    <div>
-                      <div className="font-medium text-gray-900">Minimal</div>
-                      <div className="text-xs text-gray-500">
-                        Clean and simple
-                      </div>
-                    </div>
-                  </button>
+                    </button>
+                  ))}
                 </div>
               </div>
             </>
