@@ -44,14 +44,14 @@ export default function Footer() {
                   Pricing
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Templates
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -63,27 +63,31 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#"
+                  href="/contact"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link
-                  href="#"
+                <a
+                  href="/privacy-policy.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Privacy Policy
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  href="#"
+                <a
+                  href="/terms-of-service.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Terms of Service
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
