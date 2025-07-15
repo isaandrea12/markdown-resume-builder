@@ -160,7 +160,7 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-white rounded-xl shadow-2xl p-8 transform rotate-1 hover:rotate-0 transition-transform duration-300">
+              <div className="bg-white rounded-xl shadow-2xl p-8 transform rotate-2 hover:rotate-0 transition-transform duration-300">
                 <div className="space-y-4">
                   <div className="h-4 bg-gray-900 rounded w-3/4"></div>
                   <div className="h-3 bg-gray-600 rounded w-1/2"></div>
