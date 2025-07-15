@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default function Preview({ markdown }: { markdown: string }) {
   return (
     <div className="resume-preview">
-      <ReactMarkdown 
+      <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
           h1: ({ children }) => (
@@ -30,14 +30,10 @@ export default function Preview({ markdown }: { markdown: string }) {
             </p>
           ),
           strong: ({ children }) => (
-            <strong className="font-semibold text-gray-900">
-              {children}
-            </strong>
+            <strong className="font-semibold text-gray-900">{children}</strong>
           ),
           em: ({ children }) => (
-            <em className="italic text-gray-600">
-              {children}
-            </em>
+            <em className="italic text-gray-600">{children}</em>
           ),
           ul: ({ children }) => (
             <ul className="list-disc list-inside space-y-1 mb-4 text-sm text-gray-700">
@@ -49,14 +45,10 @@ export default function Preview({ markdown }: { markdown: string }) {
               {children}
             </ol>
           ),
-          li: ({ children }) => (
-            <li className="leading-relaxed">
-              {children}
-            </li>
-          ),
+          li: ({ children }) => <li className="leading-relaxed">{children}</li>,
           a: ({ children, href }) => (
-            <a 
-              href={href} 
+            <a
+              href={href}
               className="text-blue-600 hover:text-blue-800 underline decoration-1 underline-offset-2"
               target="_blank"
               rel="noopener noreferrer"
@@ -84,5 +76,5 @@ export default function Preview({ markdown }: { markdown: string }) {
         {markdown}
       </ReactMarkdown>
     </div>
-  )
+  );
 }
